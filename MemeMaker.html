@@ -50,7 +50,10 @@
             var canvas = document.querySelector('canvas');
             var ctx = canvas.getContext("2d");
             // Your code here
-            ctx.drawImage(image, 0, 0);
+            var canvasWidth = 500;
+            var canvasHeight = 500;
+
+            ctx.drawImage(image, 0, 0, canvasWidth, canvasHeight);
             
             ctx.font = "36pt Impact";
             
@@ -80,11 +83,7 @@
 
 
         function handleFileSelect(evt) {
-            var canvasWidth = 500;
-            var canvasHeight = 500;
             var file = evt.target.files[0];
-
-
 
             var reader = new FileReader();
             reader.onload = function(fileObject) {
